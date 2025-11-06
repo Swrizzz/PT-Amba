@@ -1,8 +1,9 @@
+/* ======= STYLE GLOBAL ======= */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f2efe5;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,47 +11,76 @@ body {
 }
 
 .container {
-  background-color: #fff;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
   width: 90%;
-  max-width: 400px;
+  max-width: 600px;
   text-align: center;
-  padding: 30px 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
+/* ======= HEADER / LOGO ======= */
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
-  border: 3px solid #cfa15d;
+  border: 4px solid #d17742;
+  margin-bottom: 20px;
 }
 
+/* ======= TEXT ======= */
 h1 {
-  margin: 10px 0 5px;
-  font-size: 24px;
-  color: #333;
+  color: #d17742;
 }
 
 p {
-  margin-bottom: 20px;
-  color: #666;
+  color: #555;
 }
 
-.link-buttons a {
+/* ======= BUTTONS / LINKS ======= */
+.button, .link-buttons a, a {
   display: block;
-  background-color: #cfa15d;
+  background: #d17742;
   color: white;
   text-decoration: none;
-  padding: 12px;
+  padding: 12px 20px;
   margin: 10px 0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: background 0.3s;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.link-buttons a:hover {
-  background-color: #a67c3c;
+.button:hover, .link-buttons a:hover, a:hover {
+  background: #b95e2e;
+  transform: translateY(-2px);
+}
+
+/* ======= CARD (JABATAN) ======= */
+.role {
+  background: #fff7ef;
+  border-left: 6px solid #d17742;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.role:hover {
+  transform: translateY(-4px);
+}
+
+/* ======= MENU LIST ======= */
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
 }
