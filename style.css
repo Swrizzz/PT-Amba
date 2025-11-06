@@ -190,6 +190,7 @@ li {
 }
 
 /* CARD BORDER MUTAR */
+/* BORDER MUTER YANG RAPI TANPA TEMBUS KE TENGAH */
 .role {
   position: relative;
   overflow: hidden;
@@ -204,29 +205,40 @@ li {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* Layer border animasi */
 .role::before {
   content: "";
   position: absolute;
-  inset: 0;
-  padding: 3px;
-  border-radius: 16px;
+  inset: -3px; /* bikin border sedikit keluar */
   background: conic-gradient(
     #d17742,
     #e85c41,
     #a67c3c,
     #d17742
   );
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
   animation: spin 4s linear infinite;
+  z-index: -1;
+}
+
+.role::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: #fff7ef;
+  z-index: 1;
+}
+
+.role > * {
+  position: relative;
+  z-index: 2; /* konten tetap di atas */
 }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 
 .role:hover {
   transform: scale(1.03);
