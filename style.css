@@ -113,37 +113,36 @@ li {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* BORDER MUTER */
-/* BORDER MUTER + GLOW ELEGAN */
+/* BORDER MUTER + GLOW HALUS RAPAT DI PINGGIR */
 .role::before {
   content: "";
   position: absolute;
-  inset: -10px;
-  border-radius: 28px;
+  inset: -3px; /* sedikit saja, biar border pas di pinggir */
+  border-radius: 19px; /* HARUS sedikit lebih besar dari .role */
   background: conic-gradient(
-    #b4460d,
-    #e65c3a,
-    #ffcb80,
-    #e65c3a,
-    #b4460d
+    #d26a32,
+    #e8874d,
+    #ffdf9b,
+    #e8874d,
+    #d26a32
   );
   animation: spin 7s linear infinite;
   z-index: 0;
-  filter: blur(6px); /* glow lembut */
-  opacity: 0.85; /* biar glow tidak terlalu terang */
+  filter: blur(1.8px); /* glow halus tapi jelas */
+  opacity: 0.55; /* glow kelihatan, tidak menutupi teks */
 }
 
-/* BAGIAN DALAM BERSIH */
+/* BAGIAN DALAM (SUPAYA TENGAH TETAP BERSIH) */
 .role::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 18px;
+  border-radius: 16px; /* sesuai radius asli card */
   background: #fff7ef;
   z-index: 1;
 }
 
-/* Konten tetap di depan */
+/* KONTEN SELALU DI DEPAN */
 .role > * {
   position: relative;
   z-index: 2;
