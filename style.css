@@ -114,27 +114,36 @@ li {
 }
 
 /* BORDER MUTER */
+/* BORDER MUTER + GLOW ELEGAN */
 .role::before {
   content: "";
   position: absolute;
-  inset: -4px;
-  border-radius: 22px; /* lebih besar supaya border tidak nabrak isi */
-  background: conic-gradient(#d17742, #e85c41, #a67c3c, #d17742);
+  inset: -10px;
+  border-radius: 28px;
+  background: conic-gradient(
+    #b4460d,
+    #e65c3a,
+    #ffcb80,
+    #e65c3a,
+    #b4460d
+  );
+  animation: spin 7s linear infinite;
   z-index: 0;
-  animation: spin 4s linear infinite;
+  filter: blur(6px); /* glow lembut */
+  opacity: 0.85; /* biar glow tidak terlalu terang */
 }
 
-/* LAPISAN DALAM SUPAYA TENGAH BERSIH */
+/* BAGIAN DALAM BERSIH */
 .role::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 16px;
+  border-radius: 18px;
   background: #fff7ef;
   z-index: 1;
 }
 
-/* KONTEN SELALU DI DEPAN */
+/* Konten tetap di depan */
 .role > * {
   position: relative;
   z-index: 2;
