@@ -133,3 +133,53 @@ li {
 .icon {
   font-size: 36px;
 }
+
+/* ===== CARD MENU MAKANAN ===== */
+.menu-card {
+  background: #fff7ef;
+  border: 2px solid #d17742;
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+.menu-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+}
+
+/* Icon makanan */
+.menu-icon {
+  font-size: 38px;
+  margin-right: 12px;
+}
+
+/* Text makanan */
+.menu-text {
+  flex-grow: 1;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.menu-text strong {
+  font-size: 17px;
+  color: #3e2f1c;
+}
+
+.menu-text p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #6a5e4a;
+}
+
+/* Harga rata kanan */
+.menu-price {
+  font-weight: 700;
+  font-size: 15px;
+  color: #b45126;
+}
