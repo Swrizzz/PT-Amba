@@ -31,8 +31,14 @@ body {
 }
 
 /* ======= TEXT ======= */
-h1 { color: #d17742; }
-p { color: #555; }
+h1 { 
+  color: #d17742; 
+  margin-top: 0;
+}
+
+p { 
+  color: #555; 
+}
 
 /* ======= BUTTONS / LINKS ======= */
 .button, .link-buttons a, a.button-link {
@@ -74,7 +80,10 @@ p { color: #555; }
   border-radius: 6px;
   transition: background 0.25s ease;
 }
-.navbar a:hover { background: #b95e2e; }
+
+.navbar a:hover {
+  background: #b95e2e;
+}
 
 /* ===== MENU LIST ===== */
 ul {
@@ -82,41 +91,29 @@ ul {
   padding: 0;
   text-align: left;
 }
+
 li {
   padding: 8px 0;
   border-bottom: 1px solid #eee;
   color: #444;
 }
 
-/* ===== EMOJI MUTAR ===== */
+/* ===== EMOJI MUTAR (Tetap Ada) ===== */
 .rotate {
   display: inline-block;
   animation: rotate 6s linear infinite;
   pointer-events: none;
 }
+
 @keyframes rotate {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
 
-/* ===== CARD JABATAN + BORDER MUTER ===== */
-.role {
-  position: relative;
-  padding: 20px;
-  margin-bottom: 22px;
-  border-radius: 16px;
-  background: #fff7ef;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* ===== CARD JABATAN CLEAN ELEGAN ===== */
+/* ===== CARD JABATAN (BERSIH TANPA GLOW) ===== */
 .role {
   background: #fff7ef;
-  border: 2px solid #d17742; /* garis rapi */
+  border: 2px solid #d17742;
   padding: 20px;
   border-radius: 16px;
   margin-bottom: 22px;
@@ -127,21 +124,9 @@ li {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover efek lembut */
 .role:hover {
   transform: scale(1.03);
   box-shadow: 0 14px 30px rgba(0,0,0,0.12);
-}
-
-/* Icon jabatan */
-.icon {
-  font-size: 36px;
-}
-
-/* HOVER CARD */
-.role:hover {
-  transform: rotate(1.2deg) scale(1.03);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
 /* ICON SIZE DI JABATAN */
