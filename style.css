@@ -113,45 +113,29 @@ li {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* BORDER MUTER + GLOW HALUS RAPAT DI PINGGIR */
-.role::before {
-  content: "";
-  position: absolute;
-  inset: -3px; /* sedikit saja, biar border pas di pinggir */
-  border-radius: 19px; /* HARUS sedikit lebih besar dari .role */
-  background: conic-gradient(
-    #d26a32,
-    #e8874d,
-    #ffdf9b,
-    #e8874d,
-    #d26a32
-  );
-  animation: spin 7s linear infinite;
-  z-index: 0;
-  filter: blur(1.8px); /* glow halus tapi jelas */
-  opacity: 0.55; /* glow kelihatan, tidak menutupi teks */
-}
-
-/* BAGIAN DALAM (SUPAYA TENGAH TETAP BERSIH) */
-.role::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px; /* sesuai radius asli card */
+/* ===== CARD JABATAN CLEAN ELEGAN ===== */
+.role {
   background: #fff7ef;
-  z-index: 1;
+  border: 2px solid #d17742; /* garis rapi */
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* KONTEN SELALU DI DEPAN */
-.role > * {
-  position: relative;
-  z-index: 2;
+/* Hover efek lembut */
+.role:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
 }
 
-/* ANIMASI PUTAR BORDER */
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Icon jabatan */
+.icon {
+  font-size: 36px;
 }
 
 /* HOVER CARD */
