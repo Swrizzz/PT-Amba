@@ -147,3 +147,88 @@ li {
   font-size: 14px;
 }
 
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: #d17742;
+  padding: 12px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 14px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background: #b95e2e;
+}
+
+/* EMOJI MUTAR */
+.rotate {
+  display: inline-block;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* CARD BORDER MUTAR */
+.role {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff7ef;
+  padding: 22px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.role::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: 16px;
+  background: conic-gradient(
+    #d17742,
+    #e85c41,
+    #a67c3c,
+    #d17742
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.role:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
