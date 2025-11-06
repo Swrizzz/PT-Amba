@@ -84,3 +84,66 @@ li {
   border-bottom: 1px solid #eee;
   color: #444;
 }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background: #d17742;
+  padding: 12px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 14px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background: #b95e2e;
+}
+
+/* ===== CARD JABATAN (UPDATED) ===== */
+.role {
+  background: #fff7ef;
+  border-left: 6px solid #d17742;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.role:hover {
+  transform: rotate(1.5deg) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.role .icon {
+  font-size: 36px;
+}
+
+.role h2 {
+  margin: 0;
+  color: #3e2f1c;
+  font-size: 20px;
+}
+
+.role p {
+  margin: 4px 0 0;
+  color: #6a5e4a;
+  font-size: 14px;
+}
+
