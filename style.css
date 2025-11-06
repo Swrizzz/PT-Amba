@@ -31,16 +31,11 @@ body {
 }
 
 /* ======= TEXT ======= */
-h1 {
-  color: #d17742;
-}
-
-p {
-  color: #555;
-}
+h1 { color: #d17742; }
+p { color: #555; }
 
 /* ======= BUTTONS / LINKS ======= */
-.button, .link-buttons a, a {
+.button, .link-buttons a, a.button-link {
   display: block;
   background: #d17742;
   color: white;
@@ -52,37 +47,9 @@ p {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.button:hover, .link-buttons a:hover, a:hover {
+.button:hover, .link-buttons a:hover, a.button-link:hover {
   background: #b95e2e;
   transform: translateY(-2px);
-}
-
-/* ======= CARD (JABATAN) ======= */
-.role {
-  background: #fff7ef;
-  border-left: 6px solid #d17742;
-  padding: 18px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-}
-
-.role:hover {
-  transform: translateY(-4px);
-}
-
-/* ======= MENU LIST ======= */
-ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  color: #444;
 }
 
 /* ===== NAVBAR ===== */
@@ -94,7 +61,7 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 50;
 }
 
 .navbar a {
@@ -105,99 +72,40 @@ li {
   font-size: 15px;
   padding: 6px 10px;
   border-radius: 6px;
-  transition: background 0.3s ease;
+  transition: background 0.25s ease;
+}
+.navbar a:hover { background: #b95e2e; }
+
+/* ===== MENU LIST ===== */
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
 }
 
-.navbar a:hover {
-  background: #b95e2e;
-}
-
-/* ===== CARD JABATAN (UPDATED) ===== */
-.role {
-  background: #fff7ef;
-  border-left: 6px solid #d17742;
-  padding: 20px;
-  border-radius: 16px;
-  margin-bottom: 22px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.role:hover {
-  transform: rotate(1.5deg) scale(1.03);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-}
-
-.role .icon {
-  font-size: 36px;
-}
-
-.role h2 {
-  margin: 0;
-  color: #3e2f1c;
-  font-size: 20px;
-}
-
-.role p {
-  margin: 4px 0 0;
-  color: #6a5e4a;
-  font-size: 14px;
-}
-
-/* NAVBAR */
-.navbar {
-  width: 100%;
-  background: #d17742;
-  padding: 12px 0;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 0 14px;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.navbar a:hover {
-  background: #b95e2e;
-}
-
-/* EMOJI MUTAR */
+/* ===== EMOJI MUTAR ===== */
 .rotate {
   display: inline-block;
-  animation: rotate 3s linear infinite;
+  animation: rotate 6s linear infinite;
+  pointer-events: none;
 }
-
 @keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* CARD BORDER MUTAR */
-/* BORDER MUTER YANG RAPI TANPA TEMBUS KE TENGAH */
+/* ===== CARD JABATAN + BORDER MUTER ===== */
 .role {
   position: relative;
-  overflow: hidden;
+  padding: 20px;
+  margin-bottom: 22px;
   border-radius: 16px;
   background: #fff7ef;
-  padding: 22px;
-  margin-bottom: 25px;
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
   display: flex;
   align-items: center;
@@ -205,21 +113,18 @@ li {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Layer border animasi */
+/* BORDER MUTER */
 .role::before {
   content: "";
   position: absolute;
-  inset: -3px; /* bikin border sedikit keluar */
-  background: conic-gradient(
-    #d17742,
-    #e85c41,
-    #a67c3c,
-    #d17742
-  );
+  inset: -4px;
+  border-radius: 22px; /* lebih besar supaya border tidak nabrak isi */
+  background: conic-gradient(#d17742, #e85c41, #a67c3c, #d17742);
+  z-index: 0;
   animation: spin 4s linear infinite;
-  z-index: -1;
 }
 
+/* LAPISAN DALAM SUPAYA TENGAH BERSIH */
 .role::after {
   content: "";
   position: absolute;
@@ -229,18 +134,25 @@ li {
   z-index: 1;
 }
 
+/* KONTEN SELALU DI DEPAN */
 .role > * {
   position: relative;
-  z-index: 2; /* konten tetap di atas */
+  z-index: 2;
 }
 
+/* ANIMASI PUTAR BORDER */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-
+/* HOVER CARD */
 .role:hover {
-  transform: scale(1.03);
+  transform: rotate(1.2deg) scale(1.03);
   box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* ICON SIZE DI JABATAN */
+.icon {
+  font-size: 36px;
 }
